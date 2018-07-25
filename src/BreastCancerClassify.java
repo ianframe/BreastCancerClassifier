@@ -10,6 +10,7 @@
  * or benign. 
  * 
  * Work on the functions in the following order:
+ *  0) author
  * 	1) calculateDistance - once you finish this, you should see a
  * 	   graph of distances appear!
  * 	2) getAllDistances
@@ -23,6 +24,16 @@ public class BreastCancerClassify {
 	static int K = 5;
 	static int BENIGN = 2;
 	static int MALIGNANT = 4;
+
+	/**
+	 * Return a String in the format: "LAST_NAME, FIRST_NAME"
+	 * This will be used for the autograder. If you'd like to earn a grade in the gradebook, please do this correctly.
+	 * Your name should match the name in PowerSchool.
+	 */
+	public static String author()
+	{
+		return null;
+	}
 	
 	/**
 	 * calculateDistance computes the distance between the two data

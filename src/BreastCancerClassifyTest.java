@@ -1,10 +1,21 @@
 import static org.junit.Assert.*;
+import org.junit.Test;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 
 public class BreastCancerClassifyTest {
 
-    @org.junit.Test
+    @Test
+    public void testAuthor()
+    {
+        String student_author = BreastCancerClassify.author();
+        assertNotNull("You didn't replace a null author value.", student_author);
+        String[] names = student_author.split(",");
+        assertEquals("There should be exactly one comma separating your last name from your first name.",
+                2, names.length);
+    }
+
+    @Test
     public void testCalculateDistance() {
         double tolerance = 0.0001;
         int[] first1D = {1247, 5, 2};
@@ -32,7 +43,7 @@ public class BreastCancerClassifyTest {
         assertEquals("Fails for distance between 2 points in a 3-D plane.", dist3D, studentAnswer3D, tolerance);
     }
 
-    @org.junit.Test
+    @Test
     public void testGetAllDistances() {
         int[][] trainData = {{00, 1, 2}, {01, 2, 2}, {02, 3, 4}, {03, 5, 2}, {04, 7, 4}, {05, 10, 4}};
         int[] testInstance = {06, 25, 4};
@@ -53,7 +64,7 @@ public class BreastCancerClassifyTest {
                 expected_answer2D, student_answer2D, 0.00001);
     }
 
-    @org.junit.Test
+    @Test
     public void testFindKClosestEntries() {
         // TO DO: TEST FOR IMPORTS OF ARRAYS AND ARRAYLIST CLASS
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -104,7 +115,7 @@ public class BreastCancerClassifyTest {
         }
     }
 
-    @org.junit.Test
+    @Test
     public void testClassify() {
         // Test case for a majority of benign
         int[][] trainDataBenign = {{00, 1, 2}, {01, 2, 2}, {02, 3, 4}, {03, 5, 2}, {04, 7, 4}, {05, 10, 2}, {06, 18, 4}};
@@ -156,7 +167,7 @@ public class BreastCancerClassifyTest {
         }
     }
 
-    @org.junit.Test
+    @Test
     public void testKNearestNeighbors() {
         int[][] bcc_training_data = InputHandler.populateData("./datasets/breast_cancer_train_data.csv");
         int[][] bcc_testing_data = InputHandler.populateData("./datasets/breast_cancer_test_data.csv");
@@ -180,7 +191,7 @@ public class BreastCancerClassifyTest {
 
     }
 
-    @org.junit.Test
+    @Test
     public void testGetAccuracy() {
         int[][] perfect_results = {{1}, {2}, {3}, {4}, {5}, {6}};
         int[] perect_student = {1, 2, 3, 4, 5, 6};
