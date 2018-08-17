@@ -47,12 +47,18 @@ For each instance of your test data, use your helpers to find the K-closest poin
 ### Step 06 - `getAccuracy`
 `getAccuracy` returns a String representing the classification accuracy. 
 
+
 The output String should be rounded to __two decimal places__ followed by the `%` symbol.
+
 For example, if 4 out of 5 outcomes were correctly predicted, the returned String should be: `"80.00%"`
+
 For example, if 3 out of 9 outcomes were correctly predicted, the returned String should be: `"33.33%"`
+
 For example, if 6 out of 9 outcomes were correctly predicted, the returned String should be: `"66.67%"`
 
+
 Read up on Java's String Formatter to learn how to round a double to two-decimal places. No fancy math is needed here. 
+
 
 This method should work for any data set, assuming that the classification label is always listed in the last column of the data set.
 
